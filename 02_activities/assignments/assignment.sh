@@ -34,8 +34,8 @@ cd data
 mkdir raw
 cd ~/Desktop/DSI_assignment1/shell/02_activities/assignments
 unzip -q rawdata.zip
-mv ./rawdata ./newproject/data/raw/
 mv ./rawdata/* ./newproject/data/raw/
+mv ./rawdata/ ./newproject/data/raw/
 # 3. List the contents of the ./data/raw directory
 ls ./newproject/data/raw
 # 4. In ./data/processed, create the following directories: server_logs, user_logs, and event_logs
