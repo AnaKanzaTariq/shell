@@ -1,3 +1,4 @@
+#1
 #!/bin/bash
 set -x
 
@@ -13,6 +14,10 @@ if [ -d newproject ]; then
   echo "Directory 'newproject' already exists. Please remove it before running this script."
   exit 1
 fi
+# download client data
+curl -Lo rawdata.zip https://github.com/UofT-DSI/shell/raw/refs/heads/main/02_activities/assignments/rawdata.zip
+unzip -q rawdata.zip
+
 mkdir newproject
 cd newproject
 
@@ -21,8 +26,6 @@ touch README.md
 echo "# Project Name: DSI Consulting Inc." > README.md
 touch analysis/main.py
 
-# download client data
-curl -Lo rawdata.zip https://github.com/UofT-DSI/shell/raw/refs/heads/main/02_activities/assignments/rawdata.zip
 
 ###########################################
 # Complete assignment here
@@ -35,7 +38,6 @@ mkdir data
 cd data
 mkdir raw
 cd ../../
-unzip -q rawdata.zip
 mv ./rawdata/* newproject/data/raw/
 mv ./rawdata/ newproject/data/raw/
 
